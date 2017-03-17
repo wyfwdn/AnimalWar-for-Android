@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Player1's turn"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/buttonRock"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/playerShow"
+        android:layout_below="@+id/playerShow"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/background_light"
+        android:contentDescription="ROCK"
+        android:src="@drawable/rock"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageButton
+        android:id="@+id/buttonPaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/buttonRock"
+        android:layout_below="@id/buttonRock"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="PAPER"
+        android:src="@drawable/paper"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageButton
+        android:id="@+id/buttonScissors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/buttonPaper"
+        android:layout_below="@id/buttonPaper"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="SCISSORS"
+        android:src="@drawable/scissors"
+        app:srcCompat="@drawable/scissors" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Main Menu" />
+
+        <Button
+            android:id="@+id/btnBgm"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="BGM ON/OFF" />
+    </LinearLayout>
+
+</LinearLayout>

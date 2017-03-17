@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/choice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="77dp" />
+
+    <ImageView
+        android:id="@+id/choice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="81dp" />
+
+    <TextView
+        android:id="@+id/playerId1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choice1"
+        android:layout_marginTop="87dp"
+        android:text="        Player1"
+        android:textAlignment="viewStart"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/playerId2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player2        "
+        android:textAlignment="viewEnd"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/playerId1"
+        android:layout_alignBottom="@+id/playerId1"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerId2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="0        :        0 "
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/btnAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Again!"
+        android:textSize="18sp"
+        android:layout_below="@+id/point"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/point"
+        android:text="Back"
+        android:textSize="18sp"
+        android:layout_alignEnd="@+id/playerId1" />
+
+</RelativeLayout>

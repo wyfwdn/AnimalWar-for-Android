@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="391dp"
+        android:layout_height="wrap_content"
+        android:text="Rock_Paper_Scissors"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gameMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Game Mode"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/modeMulti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp"
+        android:text="Multi Player"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="218dp" />
+
+    <Button
+        android:id="@+id/modeSingle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.50"
+        android:text="Single Player"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.76"
+        android:text="Exit" />
+
+</LinearLayout>
