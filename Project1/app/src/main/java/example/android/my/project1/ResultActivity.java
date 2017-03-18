@@ -16,7 +16,7 @@ public class ResultActivity extends AppCompatActivity {
     private ImageView imgView1, imgView2;
     private TextView result, point_view, playerId1_view, playerId2_view;
     private Button btn_again, btn_back;
-    private MediaPlayer mp, mp_btn;
+    private MediaPlayer mp_1p, mp_2p, mp_tied, mp_btn;
     int count1 = 0, count2 = 0; //initialize the points of two player
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +27,9 @@ public class ResultActivity extends AppCompatActivity {
         int pointOne = myIntent.getIntExtra("countOne",0); //receive player1's points
         int pointTwo = myIntent.getIntExtra("countTwo",0); //receive player2's points
         mp_btn = MediaPlayer.create(this, R.raw.blaster);
-        mp = MediaPlayer.create(this, R.raw.result);
-        mp.start();
+        mp_1p = MediaPlayer.create(this, R.raw.p1win);
+        mp_2p = MediaPlayer.create(this, R.raw.p2win);
+        mp_tied = MediaPlayer.create(this, R.raw.tied);
         count1 = count1+pointOne; count2 = count2+pointTwo; //sum the points from the last turn
         point_view = (TextView) findViewById(R.id.point);
         playerId1_view = (TextView) findViewById(R.id.playerId1);
@@ -49,15 +50,18 @@ public class ResultActivity extends AppCompatActivity {
                     case 'r':
                         imgView2.setImageResource(R.drawable.rock);
                         result.setText("Tied!");
+                        mp_tied.start();
                         break;
                     case 's':
                         imgView2.setImageResource(R.drawable.scissors);
                         result.setText("Winner is Player1!");
                         count1++;
+                        mp_1p.start();
                         break;
                     case 'p':
                         imgView2.setImageResource(R.drawable.paper);
                         result.setText("Winner is Player2!");
+                        mp_2p.start();
                         count2++;
                         break;
                 }
@@ -69,15 +73,18 @@ public class ResultActivity extends AppCompatActivity {
                         imgView2.setImageResource(R.drawable.rock);
                         result.setText("Winner is Player1!");
                         count1++;
+                        mp_1p.start();
                         break;
                     case 's':
                         imgView2.setImageResource(R.drawable.scissors);
                         result.setText("Winner is Player2!");
                         count2++;
+                        mp_2p.start();
                         break;
                     case 'p':
                         imgView2.setImageResource(R.drawable.paper);
                         result.setText("Tied!");
+                        mp_tied.start();
                         break;
                 }
                 break;
@@ -88,14 +95,17 @@ public class ResultActivity extends AppCompatActivity {
                         imgView2.setImageResource(R.drawable.rock);
                         result.setText("Winner is Player2!");
                         count2++;
+                        mp_2p.start();
                         break;
                     case 's':
                         imgView2.setImageResource(R.drawable.scissors);
                         result.setText("Tied!");
+                        mp_tied.start();
                         break;
                     case 'p':
                         imgView2.setImageResource(R.drawable.paper);
                         result.setText("Winner is Player1!");
+                        mp_1p.start();
                         count1++;
                         break;
                 }
@@ -119,7 +129,9 @@ public class ResultActivity extends AppCompatActivity {
                 finish();
             }
             else if (v.getId() == R.id.btnBack){
-                mp.release();
+                mp_1p.release();
+                mp_tied.release();
+                mp_2p.release();
                 Intent myIntent1 = new Intent(ResultActivity.this, MainActivity.class);
                 startActivity(myIntent1);
                 finish();

@@ -45,6 +45,20 @@
         tools:layout_editor_absoluteY="149dp" />
 
     <Button
+        android:id="@+id/bgm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.76"
+        android:text="bgm on/off" />
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.76"
+        android:text="ABOUT" />
+
+    <Button
         android:id="@+id/exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
