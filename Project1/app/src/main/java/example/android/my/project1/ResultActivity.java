@@ -44,66 +44,66 @@ public class ResultActivity extends AppCompatActivity {
         btn_back.setOnClickListener(listener1);
         point_view.setText(Integer.toString(count1)+'\t'+'\t'+'\t'+'\t'+':'+'\t'+'\t'+'\t'+'\t'+Integer.toString(count2));
         switch (choiceOne){
-            case 'r':
-                imgView1.setImageResource(R.drawable.rock);
+            case 'm':
+                imgView1.setImageResource(R.drawable.mouse);
                 switch (choiceTwo) {
-                    case 'r':
-                        imgView2.setImageResource(R.drawable.rock);
+                    case 'm':
+                        imgView2.setImageResource(R.drawable.mouse);
                         result.setText("Tied!");
                         mp_tied.start();
                         break;
-                    case 's':
-                        imgView2.setImageResource(R.drawable.scissors);
+                    case 'e':
+                        imgView2.setImageResource(R.drawable.ele);
                         result.setText("Winner is Player1!");
                         count1++;
                         mp_1p.start();
                         break;
-                    case 'p':
-                        imgView2.setImageResource(R.drawable.paper);
+                    case 'c':
+                        imgView2.setImageResource(R.drawable.cat);
                         result.setText("Winner is Player2!");
                         mp_2p.start();
                         count2++;
                         break;
                 }
                 break;
-            case 'p':
-                imgView1.setImageResource(R.drawable.paper);
+            case 'c':
+                imgView1.setImageResource(R.drawable.cat);
                 switch (choiceTwo) {
-                    case 'r':
-                        imgView2.setImageResource(R.drawable.rock);
+                    case 'm':
+                        imgView2.setImageResource(R.drawable.mouse);
                         result.setText("Winner is Player1!");
                         count1++;
                         mp_1p.start();
                         break;
-                    case 's':
-                        imgView2.setImageResource(R.drawable.scissors);
+                    case 'e':
+                        imgView2.setImageResource(R.drawable.ele);
                         result.setText("Winner is Player2!");
                         count2++;
                         mp_2p.start();
                         break;
-                    case 'p':
-                        imgView2.setImageResource(R.drawable.paper);
+                    case 'c':
+                        imgView2.setImageResource(R.drawable.cat);
                         result.setText("Tied!");
                         mp_tied.start();
                         break;
                 }
                 break;
-            case 's':
-                imgView1.setImageResource(R.drawable.scissors);
+            case 'e':
+                imgView1.setImageResource(R.drawable.ele);
                 switch (choiceTwo) {
-                    case 'r':
-                        imgView2.setImageResource(R.drawable.rock);
+                    case 'm':
+                        imgView2.setImageResource(R.drawable.mouse);
                         result.setText("Winner is Player2!");
                         count2++;
                         mp_2p.start();
                         break;
-                    case 's':
-                        imgView2.setImageResource(R.drawable.scissors);
+                    case 'e':
+                        imgView2.setImageResource(R.drawable.ele);
                         result.setText("Tied!");
                         mp_tied.start();
                         break;
-                    case 'p':
-                        imgView2.setImageResource(R.drawable.paper);
+                    case 'c':
+                        imgView2.setImageResource(R.drawable.cat);
                         result.setText("Winner is Player1!");
                         mp_1p.start();
                         count1++;

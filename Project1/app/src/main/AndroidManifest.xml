@@ -21,6 +21,9 @@
         <activity android:name=".SingleActivity" />
         <activity android:name=".MultiActivity"></activity>
         <activity android:name=".ResultActivity" />
+        <activity android:name=".RecordActivity" />
+
+
 
     </application>
 

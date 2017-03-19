@@ -16,8 +16,8 @@
         android:textStyle="bold" />
 
     <ImageButton
-        android:id="@+id/buttonRock"
-        android:layout_width="366dp"
+        android:id="@+id/buttonMouse"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/playerShow"
         android:layout_below="@+id/playerShow"
@@ -25,35 +25,35 @@
         android:layout_marginRight="20dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/background_light"
-        android:contentDescription="ROCK"
-        android:src="@drawable/rock"
-        app:srcCompat="@drawable/rock" />
+        android:contentDescription="mouse"
+        android:src="@drawable/mouse"
+        app:srcCompat="@drawable/mouse" />
 
     <ImageButton
-        android:id="@+id/buttonPaper"
+        android:id="@+id/buttonCat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/buttonRock"
-        android:layout_below="@id/buttonRock"
+        android:layout_alignLeft="@id/buttonMouse"
+        android:layout_below="@id/buttonMouse"
         android:layout_marginRight="20dp"
         android:layout_marginTop="9dp"
         android:background="@android:color/background_light"
-        android:contentDescription="PAPER"
-        android:src="@drawable/paper"
-        app:srcCompat="@drawable/paper" />
+        android:contentDescription="cat"
+        android:src="@drawable/cat"
+        app:srcCompat="@drawable/cat" />
 
     <ImageButton
-        android:id="@+id/buttonScissors"
+        android:id="@+id/buttonEle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/buttonPaper"
-        android:layout_below="@id/buttonPaper"
+        android:layout_alignLeft="@id/buttonCat"
+        android:layout_below="@id/buttonCat"
         android:layout_marginRight="20dp"
         android:layout_marginTop="9dp"
         android:background="@android:color/background_light"
-        android:contentDescription="SCISSORS"
-        android:src="@drawable/scissors"
-        app:srcCompat="@drawable/scissors" />
+        android:contentDescription="elephant"
+        android:src="@drawable/ele"
+        app:srcCompat="@drawable/ele" />
 
     <LinearLayout
         android:layout_width="match_parent"

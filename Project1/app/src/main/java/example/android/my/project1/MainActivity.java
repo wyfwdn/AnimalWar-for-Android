@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     new AlertDialog.Builder(MainActivity.this)
                             .setTitle("ABOUT")
                             .setMessage("4901 Project1 Beta4\n\nThere are three kinds of animals which are mouse, cat and elephant. The mouse can be eaten by the cat, and the cat can be crumpled by the elephant. However, the mouse can beat the elephant.Player can choose an animal to fight against the animal chosen by the computer or another player.\n\nCopyright @ yw2910 & yz3021 ")
-                            .setPositiveButton("确认",
+                            .setPositiveButton("OK",
                                     new DialogInterface.OnClickListener() {
 
                                         public void onClick(DialogInterface dialog, int which) {

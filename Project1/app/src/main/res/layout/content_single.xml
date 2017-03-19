@@ -12,90 +12,97 @@
     tools:context="example.android.my.project1.SingleActivity"
     tools:showIn="@layout/activity_single">
 
-    <ImageView
-        android:id="@+id/fg_title"
-        android:layout_width="match_parent"
-        android:src="@drawable/fg_title"
-        android:layout_height="wrap_content"
-        android:background="#fdfcfc" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="391dp"
+        android:layout_height="wrap_content"
+        android:text="Mouse_Cat_Elephant"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:id="@+id/cmpShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fg_title"
         android:layout_marginLeft="20dp"
         android:text="Computer"
-        android:textColor="@color/text_color"/>
+        android:textColor="@color/text_color"
+        android:layout_marginStart="22dp"
+        android:layout_alignBaseline="@+id/playerShow"
+        android:layout_alignBottom="@+id/playerShow"
+        android:layout_toEndOf="@+id/viewCmp" />
 
     <TextView
         android:id="@+id/playerShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/fg_title"
         android:layout_marginRight="20dp"
         android:text="Choose your Punch!"
-        android:textColor="@color/text_color" />
+        android:textColor="@color/text_color"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/btnMouse"
+        android:layout_marginTop="15dp" />
 
 
     <ImageButton
-        android:id="@+id/buttonRock"
+        android:id="@+id/btnMouse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
-        android:contentDescription="ROCK"
-        android:src="@drawable/rock"
         android:background="@drawable/button_selector"
+        android:contentDescription="mouse"
+        android:src="@drawable/mouse"
         android:layout_below="@+id/playerShow"
-        android:layout_alignEnd="@+id/playerShow"
-        android:layout_marginEnd="52dp" />
+        android:layout_alignStart="@+id/btnCat" />
+
     <ImageButton
-        android:id="@+id/buttonPaper"
+        android:id="@+id/btnCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/buttonRock"
-        android:layout_below="@id/buttonRock"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="9dp"
-        android:contentDescription="PAPER"
-        android:src="@drawable/paper"
         android:background="@drawable/button_selector"
-        />
+        android:contentDescription="cat"
+        android:src="@drawable/cat"
+        android:layout_below="@+id/btnMouse"
+        android:layout_alignStart="@+id/btnEle" />
+
     <ImageButton
-        android:id="@+id/btnSci"
+        android:id="@+id/btnEle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/buttonPaper"
-        android:layout_below="@id/buttonPaper"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="9dp"
-        android:contentDescription="SCISSORS"
-        android:src="@drawable/scissors"
         android:background="@drawable/button_selector"
-        />
+        android:contentDescription="elephant"
+        android:src="@drawable/ele"
+        android:layout_below="@+id/btnCat"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
 
     <ImageView
         android:id="@+id/viewCmp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/buttonPaper"
-        android:layout_below="@id/cmpShow"
+        android:layout_alignBottom="@+id/btnCat"
+        android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:contentDescription="cmpViewDes"/>
+        android:layout_marginStart="55dp"
+        android:contentDescription="cmpViewDes" />
 
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/viewCmp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp"
         android:textColor="#ff6ec7"
         android:text="result"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:layout_above="@+id/textCount"
+        android:layout_toStartOf="@+id/cmpShow" />
 
     <TextView
         android:id="@+id/textCount"
@@ -111,22 +118,43 @@
         android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnSci"
-        android:layout_below="@+id/btnSci"
         android:text="bgm on/off"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/btnEle"
+        android:layout_alignStart="@+id/btnEle" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnPause"
-        android:layout_alignBottom="@+id/btnPause"
-        android:layout_toEndOf="@+id/cmpShow"
         android:text="back"
         android:textAlignment="center"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/btnPause"
+        android:layout_alignBottom="@+id/btnPause"
+        android:layout_alignStart="@+id/cmpShow" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:hint="Type your name to record!"
+        android:layout_above="@+id/btnRecord"
+        android:layout_alignEnd="@+id/btnPause"
+        android:layout_alignStart="@+id/btnBack" />
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btnBack"
+        android:layout_marginStart="33dp" />
 
 </RelativeLayout>

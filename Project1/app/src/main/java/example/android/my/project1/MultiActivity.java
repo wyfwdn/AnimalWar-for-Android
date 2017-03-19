@@ -13,7 +13,7 @@ import android.media.MediaPlayer;
  */
 
 public class MultiActivity extends Activity {
-    private ImageButton r_imgBtn, p_imgBtn, s_imgBtn;
+    private ImageButton m_imgBtn, c_imgBtn, e_imgBtn;
     private TextView title_view;
     private char player1, player2;
     private Button menu, bgm;
@@ -26,17 +26,17 @@ public class MultiActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi);
-        r_imgBtn = (ImageButton) findViewById(R.id.buttonRock);
-        p_imgBtn = (ImageButton) findViewById(R.id.buttonPaper);
-        s_imgBtn = (ImageButton) findViewById(R.id.buttonScissors);
+        m_imgBtn = (ImageButton) findViewById(R.id.buttonMouse);
+        c_imgBtn = (ImageButton) findViewById(R.id.buttonCat);
+        e_imgBtn = (ImageButton) findViewById(R.id.buttonEle);
         title_view = (TextView) findViewById(R.id.titleView);
         menu = (Button) findViewById(R.id.btnMenu);
         bgm = (Button) findViewById(R.id.btnBgm);
         player1 = '0';
         player2 = '0';
-        r_imgBtn.setOnClickListener(myOnClickListener1);
-        p_imgBtn.setOnClickListener(myOnClickListener1);
-        s_imgBtn.setOnClickListener(myOnClickListener1);
+        m_imgBtn.setOnClickListener(myOnClickListener1);
+        c_imgBtn.setOnClickListener(myOnClickListener1);
+        e_imgBtn.setOnClickListener(myOnClickListener1);
         menu.setOnClickListener(myOnClickListener1);
         bgm.setOnClickListener(myOnClickListener1);
         Intent myIntent2 = getIntent(); ////receive both players'points from last result
@@ -70,12 +70,12 @@ public class MultiActivity extends Activity {
                     if (count % 2 == 1) {
                         mp_btn1.start();
                         title_view.setText("Player2's turn");
-                        if (v1.getId() == R.id.buttonRock) {
-                            player1 = 'r';
-                        } else if (v1.getId() == R.id.buttonPaper) {
-                            player1 = 'p';
-                        } else if (v1.getId() == R.id.buttonScissors) {
-                            player1 = 's';
+                        if (v1.getId() == R.id.buttonMouse) {
+                            player1 = 'm';
+                        } else if (v1.getId() == R.id.buttonCat) {
+                            player1 = 'c';
+                        } else if (v1.getId() == R.id.buttonEle) {
+                            player1 = 'e';
                         }
                     }
                     //count % 2 == 0 means both players have made their choice
@@ -83,12 +83,12 @@ public class MultiActivity extends Activity {
                         mp_btn1.stop();
                         mp_btn1.release();
                         mp_btn2.start();
-                        if (v1.getId() == R.id.buttonRock) {
-                            player2 = 'r';
-                        } else if (v1.getId() == R.id.buttonPaper) {
-                            player2 = 'p';
-                        } else if (v1.getId() == R.id.buttonScissors) {
-                            player2 = 's';
+                        if (v1.getId() == R.id.buttonMouse) {
+                            player2 = 'm';
+                        } else if (v1.getId() == R.id.buttonCat) {
+                            player2 = 'c';
+                        } else if (v1.getId() == R.id.buttonEle) {
+                            player2 = 'e';
                         }
                         Intent myIntent = new Intent(MultiActivity.this, ResultActivity.class); //send both players' choice and sum points to result activity
                         myIntent.putExtra("choiceOne", player1);
