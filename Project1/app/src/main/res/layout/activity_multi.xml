@@ -3,15 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
-    android:orientation="vertical">
+    android:background="@drawable/background2"
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/titleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="50dp"
         android:text="Player1's turn"
         android:textAlignment="center"
+        android:textColor="@android:color/background_light"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -21,10 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/playerShow"
         android:layout_below="@+id/playerShow"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/background_light"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
         android:contentDescription="mouse"
         android:src="@drawable/mouse"
         app:srcCompat="@drawable/mouse" />
@@ -35,9 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/buttonMouse"
         android:layout_below="@id/buttonMouse"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="9dp"
-        android:background="@android:color/background_light"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
         android:contentDescription="cat"
         android:src="@drawable/cat"
         app:srcCompat="@drawable/cat" />
@@ -48,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/buttonCat"
         android:layout_below="@id/buttonCat"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="9dp"
-        android:background="@android:color/background_light"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
         android:contentDescription="elephant"
         android:src="@drawable/ele"
         app:srcCompat="@drawable/ele" />
