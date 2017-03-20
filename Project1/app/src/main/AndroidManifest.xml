@@ -19,10 +19,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".SingleActivity" />
-        <activity android:name=".MultiActivity" />
+        <activity android:name=".MultiActivity"></activity>
         <activity android:name=".ResultActivity" />
         <activity android:name=".RecordActivity" />
-        <activity android:name=".HelperActivity" />
+
+
+
     </application>
 
 </manifest>

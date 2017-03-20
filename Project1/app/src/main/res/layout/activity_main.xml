@@ -4,23 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/background1"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:weightSum="1">
 
     <TextView
         android:id="@+id/gameTitle"
-        android:layout_width="match_parent"
+        android:layout_width="391dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginBottom="10dp"
-        android:shadowColor="@android:color/transparent"
         android:text="Mouse_Cat_Elephant"
         android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textColorLink="@android:color/transparent"
-        android:textSize="36sp"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -36,64 +31,41 @@
     <Button
         android:id="@+id/modeMulti"
         android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_marginTop="150dp"
-        android:layout_weight="0.06"
-        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp"
         android:text="Multi Player"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textIsSelectable="false"
-        android:textStyle="bold"
-        android:theme="@style/AlertDialog.AppCompat"
-        android:typeface="monospace"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="218dp" />
 
     <Button
         android:id="@+id/modeSingle"
         android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_weight="0.06"
-        android:background="@android:color/transparent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.03"
         android:text="Single Player"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:typeface="monospace"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="149dp" />
 
     <Button
         android:id="@+id/bgm"
         android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_weight="0.06"
-        android:background="@android:color/transparent"
-        android:text="bgm on/off"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.01"
+        android:text="bgm on/off" />
 
     <Button
         android:id="@+id/about"
         android:layout_width="match_parent"
-        android:layout_height="23dp"
-        android:layout_weight="0.06"
-        android:background="@android:color/transparent"
-        android:text="ABOUT"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.03"
+        android:text="ABOUT" />
 
     <Button
         android:id="@+id/exit"
         android:layout_width="match_parent"
-        android:layout_height="23dp"
+        android:layout_height="match_parent"
         android:layout_weight="0.06"
-        android:background="@android:color/transparent"
-        android:text="Exit"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:text="Exit" />
 
 </LinearLayout>

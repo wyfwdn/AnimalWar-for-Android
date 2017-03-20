@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background3"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,64 +14,74 @@
 
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="391dp"
+        android:layout_height="wrap_content"
+        android:text="Mouse_Cat_Elephant"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
         android:id="@+id/cmpShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnMouse"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginStart="31dp"
         android:text="Computer"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
-
+        android:textColor="@color/text_color"
+        android:layout_marginStart="22dp"
+        android:layout_alignBaseline="@+id/playerShow"
+        android:layout_alignBottom="@+id/playerShow"
+        android:layout_toEndOf="@+id/viewCmp" />
 
     <TextView
         android:id="@+id/playerShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cmpShow"
-        android:layout_alignBottom="@+id/cmpShow"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="Choose your Punch!"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/text_color"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/btnMouse"
+        android:layout_marginTop="15dp" />
+
 
     <ImageButton
         android:id="@+id/btnMouse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnCat"
-        android:layout_alignEnd="@+id/btnRecord"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/button_selector"
         android:contentDescription="mouse"
-        android:src="@drawable/mouse" />
+        android:src="@drawable/mouse"
+        android:layout_below="@+id/playerShow"
+        android:layout_alignStart="@+id/btnCat" />
 
     <ImageButton
         android:id="@+id/btnCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnEle"
-        android:layout_alignStart="@+id/btnMouse"
-        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/button_selector"
         android:contentDescription="cat"
-        android:src="@drawable/cat" />
+        android:src="@drawable/cat"
+        android:layout_below="@+id/btnMouse"
+        android:layout_alignStart="@+id/btnEle" />
 
     <ImageButton
         android:id="@+id/btnEle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnPause"
-        android:layout_alignStart="@+id/btnCat"
-        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/button_selector"
         android:contentDescription="elephant"
-        android:src="@drawable/ele" />
+        android:src="@drawable/ele"
+        android:layout_below="@+id/btnCat"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
 
     <ImageView
         android:id="@+id/viewCmp"
@@ -89,65 +98,63 @@
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textCount"
-        android:layout_marginBottom="13dp"
+        android:textColor="#ff6ec7"
         android:text="result"
-        android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textSize="15sp"
+        android:layout_above="@+id/textCount"
+        android:layout_toStartOf="@+id/cmpShow" />
 
     <TextView
         android:id="@+id/textCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textResult"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textResult"
         android:text="round:"
-        android:textColor="@android:color/white"
-        android:textSize="20sp" />
+        android:textColor="#ff2400"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textResult"
-        android:layout_alignStart="@+id/btnEle"
-        android:layout_marginBottom="30dp"
         android:text="bgm on/off"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/btnEle"
+        android:layout_alignStart="@+id/btnEle" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnPause"
-        android:layout_alignBottom="@+id/btnPause"
-        android:layout_alignStart="@+id/cmpShow"
         android:text="back"
         android:textAlignment="center"
         android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnRecord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Record"
         android:textStyle="bold"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_marginStart="14dp" />
+        android:layout_alignBaseline="@+id/btnPause"
+        android:layout_alignBottom="@+id/btnPause"
+        android:layout_alignStart="@+id/cmpShow" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@android:color/black" />
+        android:textAlignment="center"
+        android:hint="Type your name to record!"
+        android:layout_above="@+id/btnRecord"
+        android:layout_alignEnd="@+id/btnPause"
+        android:layout_alignStart="@+id/btnBack" />
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/btnBack"
+        android:layout_marginStart="33dp" />
 
 </RelativeLayout>
