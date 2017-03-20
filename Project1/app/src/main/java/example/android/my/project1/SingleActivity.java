@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
 import java.text.SimpleDateFormat;
+
 /**
  * Created by Administrator on 2017/3/16.
  */
@@ -23,10 +24,10 @@ public class SingleActivity extends Activity {
     private ImageView imgView;  //the first ImageView in the view
     private ImageButton m_imgBtn, c_imgBtn, e_imgBtn;  // Mouse, Cat, Elephant
     private Button back_Btn, pause_Btn, record_Btn;
-    private EditText et;
+    private EditText et; //where players input their names to record
     private TextView result_tv, count_tv;  //the textView of result and count
     int count = 0; // initialize the count
-    int wins = 0, loses = 0;
+    int wins = 0, loses = 0;    // initialize the count of win and lose
 
     //intialize a listener to monitoring the three buttons
     SingleActivity.MyOnClickListener myOnClickListener = new SingleActivity.MyOnClickListener();
@@ -39,7 +40,7 @@ public class SingleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single);
 
-        //added
+        //Declare buttons
         et = (EditText) findViewById(R.id.editText);
         m_imgBtn = (ImageButton) findViewById(R.id.btnMouse);
         c_imgBtn = (ImageButton) findViewById(R.id.btnCat);
@@ -47,10 +48,10 @@ public class SingleActivity extends Activity {
         pause_Btn = (Button) findViewById(R.id.btnPause);
         back_Btn = (Button) findViewById(R.id.btnBack);
         record_Btn = (Button) findViewById(R.id.btnRecord);
-        //initialize imgView
+        //Declare imgView
         imgView = (ImageView) findViewById(R.id.viewCmp);
 
-        //initialize result and count TextView
+        //Declare result and count TextView
         result_tv = (TextView) findViewById(R.id.textResult);
         count_tv = (TextView) findViewById(R.id.textCount);
 
@@ -65,28 +66,19 @@ public class SingleActivity extends Activity {
         mp_button = MediaPlayer.create(this, R.raw.blaster);
 
 
-        //play background music here
+        //play background music here with looping setting
         mp_background.start();
         mp_background.setLooping(true);
-        //end
+
 
     }
 
-    //added
     private class MyOnClickListener implements View.OnClickListener {
 
-        @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
-
-            //play button sound here
-
-
             // get a random number form 1 to 3
             int rand = (int) (Math.random() * 3 + 1);
-
-            //store times of game in device
-//            storeData(count+"");
+            // control bgm on/off
             if (v.getId() == R.id.btnPause) {
                 if (mp_background.isPlaying()) {
                     mp_background.pause();
@@ -94,12 +86,14 @@ public class SingleActivity extends Activity {
                     mp_background.start();
                 }
             }
+            // back to main menu
             else if (v.getId() == R.id.btnBack){
                 mp_background.stop();
                 Intent myIntent3 = new Intent(SingleActivity.this, MainActivity.class);
                 SingleActivity.this.finish();
                 startActivity(myIntent3);
             }
+            // jump to game record history page
             else if (v.getId() == R.id.btnRecord){
                 String name = et.getText().toString();
                 SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd    hh:mm:ss");
@@ -115,79 +109,71 @@ public class SingleActivity extends Activity {
                         RecordActivity.class);
                 startActivity(intent);
             }
+            // play game
             else {
                 count++;//
                 switch (rand) {
                     /**
-                     * rand = 1 means computer is Rock,
-                     * 2 represents Paper,
-                     * 3 represents scissors
+                     * rand = 1 means computer is mouse,
+                     * 2 represents cat,
+                     * 3 represents elephant
                      */
                     case 1:
-                        imgView.setImageResource(R.drawable.mouse);  //computer choose Rock
+                        imgView.setImageResource(R.drawable.mouse);  //computer choose mouse
                         mp_button.start();
                         switch (v.getId()) {
-                            case R.id.btnMouse:   //player choose Rock
-                                result_tv.setText("Result: "
-                                        + "Tied!");
-                                count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
+                            case R.id.btnMouse:   //player choose mouse
+                                result_tv.setText("Result: " + "Tied!");
+                                count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses); //display round and counts of win & lose
                                 break;
-                            case R.id.btnCat:  //player choose Paper
+                            case R.id.btnCat:  //player choose cat
                                 wins++;
-                                result_tv.setText("Result: "
-                                        + "Win!");
+                                result_tv.setText("Result: " + "Win!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
-                            case R.id.btnEle:  //player choose Scissors
+                            case R.id.btnEle:  //player choose elephant
                                 loses++;
-                                result_tv.setText("Result: "
-                                        + "Lose!");
+                                result_tv.setText("Result: " + "Lose!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                         }
                         break;
                     case 2:
-                        imgView.setImageResource(R.drawable.cat);  //computer choose Paper
+                        imgView.setImageResource(R.drawable.cat);  //computer choose cat
                         mp_button.start();
                         switch (v.getId()) {
                             case R.id.btnMouse:
                                 loses++;
-                                result_tv.setText("Result: "
-                                        + "Lose!");
+                                result_tv.setText("Result: " + "Lose!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                             case R.id.btnCat:
-                                result_tv.setText("Result: "
-                                        + "Tie!");
+                                result_tv.setText("Result: " + "Tied!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                             case R.id.btnEle:
                                 wins++;
-                                result_tv.setText("Result: "
-                                        + "Win!");
+                                result_tv.setText("Result: " + "Win!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                         }
                         break;
                     case 3:
-                        imgView.setImageResource(R.drawable.ele);  //computer choose Scissors
+                        imgView.setImageResource(R.drawable.ele);  //computer choose elephant
                         mp_button.start();
                         switch (v.getId()) {
                             case R.id.btnMouse:
                                 wins++;
-                                result_tv.setText("Result: "
-                                        + "Win!");
+                                result_tv.setText("Result: " + "Win!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                             case R.id.btnCat:
                                 loses++;
-                                result_tv.setText("Result: "
-                                        + "Lose!");
+                                result_tv.setText("Result: " + "Lose!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                             case R.id.btnEle:
-                                result_tv.setText("Result: "
-                                        + "Tie!");
+                                result_tv.setText("Result: " + "Tied!");
                                 count_tv.setText("Round: " + count+"\t\t\tWins: " + wins + "\t\t\tLoses: " + loses);
                                 break;
                         }
@@ -197,46 +183,8 @@ public class SingleActivity extends Activity {
         }
     }
 
-//    public void storeData(String count)
-//    {
-//        FileOutputStream outputStream;
-//        Date date = new Date(System.currentTimeMillis());
-//        try {
-//            outputStream = openFileOutput("record.txt", Context.MODE_PRIVATE);
-//            outputStream.write(date.toString().getBytes());
-//            outputStream.write("    ".getBytes());
-//            outputStream.write(count.getBytes());
-//            outputStream.write(System.getProperty("line.separator").getBytes());
-//            outputStream.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-    //end
-
     protected void onDestroy() {
         mp_background.stop();
         super.onDestroy();
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
