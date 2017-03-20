@@ -121,15 +121,6 @@ public class MultiActivity extends Activity {
                     }
                 }
             }
-    protected void onDestroy() {
-        mp_bgm.stop();
-        mp_bgm.release();
-        mp_btn1.stop();
-        mp_btn1.release();
-        mp_btn2.stop();
-        mp_btn2.release();
-        super.onDestroy();
-    }
 
 }
 
